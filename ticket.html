@@ -89,6 +89,37 @@
                 <header class="section-header">
                     <h3>September 11, 2025</h3>
                 </header>
+                
+                <!-- Countdown Timer Section -->
+                <div class="countdown-container" style="text-align: center; margin: 30px 0;">
+                    <h4 style="color: #34495e; margin-bottom: 20px; font-family: 'Roboto', sans-serif;">Conference Starts In:</h4>
+                    
+                    <!-- Timer Style 3: Minimal Clean -->
+                    <div id="timer-style-3" class="timer-display" style="display: block;">
+                        <div style="display: flex; gap: 25px; align-items: center; justify-content: center;">
+                            <div style="text-align: center;">
+                                <div id="days-3" style="font-size: 3rem; font-weight: bold; color: #2c3e50;">00</div>
+                                <div style="font-size: 0.9rem; color: #7f8c8d; font-weight: 500;">DAYS</div>
+                            </div>
+                            <div style="font-size: 2rem; color: #bdc3c7;">•</div>
+                            <div style="text-align: center;">
+                                <div id="hours-3" style="font-size: 3rem; font-weight: bold; color: #2c3e50;">00</div>
+                                <div style="font-size: 0.9rem; color: #7f8c8d; font-weight: 500;">HOURS</div>
+                            </div>
+                            <div style="font-size: 2rem; color: #bdc3c7;">•</div>
+                            <div style="text-align: center;">
+                                <div id="minutes-3" style="font-size: 3rem; font-weight: bold; color: #2c3e50;">00</div>
+                                <div style="font-size: 0.9rem; color: #7f8c8d; font-weight: 500;">MINUTES</div>
+                            </div>
+                            <div style="font-size: 2rem; color: #bdc3c7;">•</div>
+                            <div style="text-align: center;">
+                                <div id="seconds-3" style="font-size: 3rem; font-weight: bold; color: #2c3e50;">00</div>
+                                <div style="font-size: 0.9rem; color: #7f8c8d; font-weight: 500;">SECONDS</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="row">
                     <div class="col-12 col-md-6 col-sm-12">
                         <div class="single-ticket">
@@ -197,6 +228,94 @@
 
         <!-- Main Javascript File -->
         <script src="js/main.js"></script>
+
+        <!-- Countdown Timer Script -->
+        <script>
+            // Conference date: September 11, 2025 at 9:00 AM IST
+            const conferenceDate = new Date('2025-09-11T09:00:00+05:30').getTime();
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = conferenceDate - now;
+
+                if (distance < 0) {
+                    // Conference has started
+                    document.querySelector('.countdown-container h4').innerHTML = 'Conference Has Started! 🎉';
+                    document.getElementById('timer-style-3').style.display = 'none';
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Format numbers with leading zeros
+                const formatNumber = (num) => num.toString().padStart(2, '0');
+
+                // Update Timer
+                document.getElementById('days-3').innerHTML = formatNumber(days);
+                document.getElementById('hours-3').innerHTML = formatNumber(hours);
+                document.getElementById('minutes-3').innerHTML = formatNumber(minutes);
+                document.getElementById('seconds-3').innerHTML = formatNumber(seconds);
+            }
+
+            // Update countdown every second
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Add some animation effects
+            document.addEventListener('DOMContentLoaded', function() {
+                const timeUnits = document.querySelectorAll('#timer-style-3 > div > div');
+                timeUnits.forEach((unit, index) => {
+                    if (unit.style.textAlign === 'center') {
+                        unit.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s both`;
+                    }
+                });
+            });
+
+            // Add CSS animations
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                
+                #timer-style-3 > div > div[style*="text-align: center"] {
+                    transition: all 0.3s ease;
+                }
+                
+                #timer-style-3 > div > div[style*="text-align: center"]:hover {
+                    transform: scale(1.05);
+                }
+                
+                .timer-display {
+                    transition: all 0.3s ease;
+                }
+                
+                @media (max-width: 768px) {
+                    #timer-style-3 div[style*="font-size: 3rem"] {
+                        font-size: 2rem !important;
+                    }
+                    
+                    #timer-style-3 > div {
+                        gap: 15px !important;
+                    }
+                    
+                    .countdown-container {
+                        padding: 0 10px;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        </script>
 
     </body>
 </html>
