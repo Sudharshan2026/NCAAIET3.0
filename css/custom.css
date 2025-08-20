@@ -1,0 +1,102 @@
+/* Custom Styles */
+
+#logo {
+    align-items: center;
+}
+
+#logo img {
+    margin-right: 15px;
+}
+
+#intro .carousel-content h2 {
+    font-size: xx-large;
+}
+
+#about .about-img img {
+    width: 100%;
+    height: auto;
+}
+
+#about .about-des-col p {
+    text-align: justify;
+}
+
+.registration-details-header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    color: #34495e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.styled-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 1px solid black;
+}
+
+.styled-table thead {
+    background: linear-gradient(to right, #3498db, #8e44ad);
+    color: white;
+}
+
+.styled-table th, .styled-table td {
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    text-align: center;
+    color: #2c3e50;
+    border: 1px solid black;
+}
+
+.styled-table thead th {
+    font-size: 20px;
+}
+
+.styled-table tbody th {
+    color: #34495e;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.styled-table tbody tr:nth-child(odd) {
+    background-color: #ecf0f1;
+}
+
+.agenda-header {
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    color: #34495e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-details h3 {
+    font-weight: bold;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}

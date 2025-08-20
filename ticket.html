@@ -25,6 +25,7 @@
 
         <!-- Main Stylesheet File -->
         <link href="css/style.css" rel="stylesheet">
+        <link href="css/custom.css" rel="stylesheet">
     </head>
 
     <body>
@@ -32,10 +33,10 @@
         <header id="header">
             <div class="container-fluid">
 
-                <div id="logo" class="pull-left" style="align-items: center;">
+                <div id="logo" class="pull-left">
                     <!-- Uncomment below if you prefer to use text logo -->
                     <!-- <h1><a href="index.html" class="scrollto">Tech Conference</a></h1> -->
-                    <a href="index.html"><img src="img/logo.png.jpg" alt="Logo" style="margin-right:15px ;"/><nbsp><strong>Sri Sairam Engineering College</strong></nbsp></a>
+                    <a href="index.html"><img src="img/logo.png.jpg" alt="Logo" /><nbsp><strong>Sri Sairam Engineering College</strong></nbsp></a>
                 </div>
 
                 <nav id="nav-menu-container">
@@ -95,6 +96,7 @@
 
                             <h4>Paper Presentation</h4>
 
+                            <!-- To update the registration link, change the href attribute below -->
                             <a href="https://forms.gle/BHaDgQSotZhkh3jy9">Register</a>
                         </div>
                     </div>
@@ -103,7 +105,7 @@
 
                                 <h4>Poster Presentation</h4>
 
-
+                                <!-- To update the registration link, change the href attribute below -->
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfh3F6Wpa9_Mhw9_YxdFlYyBw-H3lSeaKy3Vm41u3TjHS4fWw/viewform?usp=sf_link ">Register</a>
                             </div>
                         </div>
@@ -117,31 +119,35 @@
         <!-- Cart Section Start -->
         <section id="cart">
             <div class="container">
-                <header class="section-header" style="text-align: center; margin-bottom: 20px;">
-                    <h3 style="font-family: 'Roboto', sans-serif; font-size: 36px; color: #34495e; text-transform: uppercase; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Registration Details</h3>
+                <header class="section-header registration-details-header">
+                    <h3>Registration Details</h3>
                 </header>
                 <div class="row justify-content-center">
                     <div class="col-md-10">
                         <div class="table-responsive-sm">
-                            <table class="table table-bordered" style="border-collapse: separate; border-spacing: 0; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                                <thead style="background: linear-gradient(to right, #3498db, #8e44ad); color: white;">
+                            <!-- To update the registration fees, modify the table below.
+                                 - Each `<tr>` element in the `<tbody>` represents a row in the table.
+                                 - The first `<th>` in a row is the profession, and the `<td>` is the fee.
+                                 - You can add or remove `<tr>` elements to update the fees. -->
+                            <table class="table table-bordered styled-table">
+                                <thead>
                                     <tr>
-                                        <th scope="col" style="border: none; padding: 15px; font-size: 20px; text-align: center;">Profession</th>
-                                        <th scope="col" style="border: none; padding: 15px; font-size: 20px; text-align: center;">Amount Rs</th>
+                                        <th scope="col">Profession</th>
+                                        <th scope="col">Amount Rs</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr style="background-color: #ecf0f1;">
-                                        <th scope="row" style="padding: 15px; font-size: 18px; color: #34495e; text-align: center;">Student</th>
-                                        <td style="padding: 15px; font-size: 18px; color: #2c3e50; text-align: center;">300 Rs</td>
+                                    <tr>
+                                        <th scope="row">Student</th>
+                                        <td>300 Rs</td>
                                     </tr>
-                                    <tr style="background-color: #f7f7f7;">
-                                        <th scope="row" style="padding: 15px; font-size: 18px; color: #34495e; text-align: center;">Faculty</th>
-                                        <td style="padding: 15px; font-size: 18px; color: #2c3e50; text-align: center;">500 Rs</td>
+                                    <tr>
+                                        <th scope="row">Faculty</th>
+                                        <td>500 Rs</td>
                                     </tr>
-                                    <tr style="background-color: #ecf0f1;">
-                                        <th scope="row" style="padding: 15px; font-size: 18px; color: #34495e; text-align: center;">Industrialist</th>
-                                        <td style="padding: 15px; font-size: 18px; color: #2c3e50; text-align: center;">1000 Rs</td>
+                                    <tr>
+                                        <th scope="row">Industrialist</th>
+                                        <td>1000 Rs</td>
                                     </tr>
                                 </tbody>
                             </table>
